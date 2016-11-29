@@ -8,7 +8,7 @@ class ProductController extends Controller
 {
     public function lists()
     {
-        $products = Product::all();
+        $products = Product::orderBy('id','DESC')->get();
 
         return response()->json([
                 'success' => true,
